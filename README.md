@@ -31,12 +31,12 @@ TimeSnap is a sleek and interactive stopwatch application built using HTML, CSS,
 ### Installation
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/TimeSnap.git
+   git clone https://github.com/rohandaivajna/TimeSnap.git
 
 2. Navigate to the project directory:
-  ```bash
+   ```bash
    cd TimeSnap
-```
+   ```
 3. Open the index.html file in your browser.
 
 ## Usage
@@ -46,7 +46,8 @@ TimeSnap is a sleek and interactive stopwatch application built using HTML, CSS,
 4. Record Laps: Click the Lap button to record the current time as a lap.
 5. Toggle Theme: Click the 🌙 button to switch between light and dark themes.
 
-##Project Structure
+## Project Structure
+
 TimeSnap/
 
 ├── [index.html](http://_vscodecontentref_/1)       # Main HTML file
