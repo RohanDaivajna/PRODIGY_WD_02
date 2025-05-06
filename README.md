@@ -39,7 +39,7 @@ TimeSnap is a sleek and interactive stopwatch application built using HTML, CSS,
 ```
 3. Open the index.html file in your browser.
 
-##Usage
+## Usage
 1. Start the Stopwatch: Click the Start button to begin timing.
 2. Pause the Stopwatch: Click the Pause button to pause the timer.
 3. Reset the Stopwatch: Click the Reset button to reset the timer to 00:00:00:000.
@@ -48,9 +48,14 @@ TimeSnap is a sleek and interactive stopwatch application built using HTML, CSS,
 
 ##Project Structure
 TimeSnap/
+
 ├── [index.html](http://_vscodecontentref_/1)       # Main HTML file
+
 ├── [styles.css](http://_vscodecontentref_/2)       # CSS file for styling
+
 ├── [script.js](http://_vscodecontentref_/3)        # JavaScript file for functionality
+
 ├── [favicon.png](http://_vscodecontentref_/4)      # Favicon for the webpage
+
 └── [README.md](http://_vscodecontentref_/5)        # Project documentation
 
