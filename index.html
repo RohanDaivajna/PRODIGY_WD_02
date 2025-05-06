@@ -1,37 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Specifies the character encoding for the document -->
   <meta charset="UTF-8">
+  
+  <!-- Ensures proper rendering and touch zooming on mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Animated Stopwatch</title>
+  
+  <!-- Links the favicon for the webpage -->
+  <link rel="icon" href="favicon.png" type="image/png">
+  
+  <!-- Title of the webpage displayed in the browser tab -->
+  <title>TimeSnap</title>
+  
+  <!-- Links a Google Font (Poppins) for styling text -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Links the external CSS file for styling the webpage -->
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-  <button id="theme-toggle" class="theme-toggle" title="Toggle Theme">🌙</button>
+  <!-- Button to toggle between light and dark themes -->
+  <button id="theme-toggle" class="theme-toggle" title="Toggle between light and dark themes">🌙</button>
 
+  <!-- Main container for the stopwatch application -->
   <div class="container">
-    <h1 class="title">Creative Stopwatch</h1>
+    <!-- Title of the application -->
+    <h1 class="title">TimeSnap</h1>
 
+    <!-- Wrapper for the stopwatch and wave animations -->
     <div class="circle-wrapper">
+      <!-- Decorative wave animation -->
       <div class="waves"></div>
+      <!-- Second wave animation with a delay -->
       <div class="waves delay"></div>
+      <!-- Stopwatch display -->
       <div class="stopwatch" id="stopwatch">
-        00:00:00:000
+        00:00:00:000 <!-- Default time display (hours:minutes:seconds:milliseconds) -->
       </div>
     </div>
 
+    <!-- Buttons for controlling the stopwatch -->
     <div class="buttons">
-      <button id="start">Start</button>
-      <button id="pause">Pause</button>
-      <button id="reset">Reset</button>
-      <button id="lap">Lap</button>
+      <!-- Button to start the stopwatch -->
+      <button id="start" title="Start the stopwatch">Start</button>
+      <!-- Button to pause the stopwatch -->
+      <button id="pause" title="Pause the stopwatch">Pause</button>
+      <!-- Button to reset the stopwatch -->
+      <button id="reset" title="Reset the stopwatch to zero">Reset</button>
+      <!-- Button to record a lap time -->
+      <button id="lap" title="Record the current time as a lap">Lap</button>
     </div>
 
-    <div class="laps" id="laps"></div>
+    <!-- Section to display recorded lap times -->
+    <div class="laps" id="laps">
+      <p class="no-laps-message">No laps recorded yet. Press "Lap" to record your first lap!</p>
+    </div>
   </div>
 
+  <!-- Links the external JavaScript file for functionality -->
   <script src="script.js"></script>
 </body>
 </html>

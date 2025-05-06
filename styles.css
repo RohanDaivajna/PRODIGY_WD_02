@@ -1,170 +1,270 @@
 /* Base Styles */
 :root {
-    --primary-bg: linear-gradient(120deg, #a1c4fd, #c2e9fb);
-    --text-color: #222;
-    --button-bg: #ffffff;
-    --button-hover: #f0f0f0;
-    --wave-color: rgba(255, 255, 255, 0.3);
-  }
-  
-  body.dark {
-    --primary-bg: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
-    --text-color: #eee;
-    --button-bg: #333;
-    --button-hover: #444;
-    --wave-color: rgba(255, 255, 255, 0.15);
-  }
-  
-  * {
+    --primary-bg: linear-gradient(120deg, #a1c4fd, #c2e9fb); /* Light theme background */
+    --text-color: #222; /* Light theme text color */
+    --button-bg: #ffffff; /* Button background color */
+    --button-hover: #f0f0f0; /* Button hover color */
+    --wave-color: rgba(255, 255, 255, 0.3); /* Wave animation color */
+}
+
+/* Dark theme overrides */
+body.dark {
+    --primary-bg: linear-gradient(120deg, #0f2027, #203a43, #2c5364); /* Dark theme background */
+    --text-color: #eee; /* Dark theme text color */
+    --button-bg: #333; /* Button background color */
+    --button-hover: #444; /* Button hover color */
+    --wave-color: rgba(255, 255, 255, 0.15); /* Wave animation color */
+}
+
+/* Reset default styles */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-  }
-  
-  body {
-    height: 100vh;
-    background: var(--primary-bg);
-    font-family: 'Poppins', sans-serif;
-    color: var(--text-color);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    overflow: hidden;
-    animation: fadeIn 2s ease;
-    transition: all 0.5s ease;
-  }
-  
-  .container {
-    text-align: center;
-  }
-  
-  .title {
-    margin-bottom: 20px;
-    font-size: 2.5rem;
-    animation: bounce 1s ease;
-  }
-  
-  .circle-wrapper {
-    position: relative;
-    width: 300px;
-    height: 300px;
-    margin: 30px auto;
-    border-radius: 50%;
-    overflow: hidden;
-    background: rgba(255,255,255,0.1);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
-  }
-  
-  .stopwatch {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2rem;
-    width: 220px;
-    height: 220px;
-    line-height: 220px;
-    text-align: center;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
-    backdrop-filter: blur(10px);
-    box-shadow: inset 0 0 10px rgba(0,0,0,0.2);
-    transition: transform 0.5s;
-  }
-  
-  .running {
-    animation: pulse 1.5s infinite;
-  }
-  
-  /* Waves */
-  .waves {
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    top: -50%;
-    left: -50%;
-    background: var(--wave-color);
-    border-radius: 40%;
-    animation: wave 6s infinite linear;
-  }
-  
-  .waves.delay {
-    animation-delay: -3s;
-    opacity: 0.6;
-  }
-  
-  @keyframes wave {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-  
-  /* Buttons */
-  .buttons button {
-    margin: 10px;
-    padding: 10px 20px;
-    font-size: 1.1rem;
-    border: none;
-    border-radius: 30px;
-    background: var(--button-bg);
-    color: var(--text-color);
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  
-  .buttons button:hover {
-    background: var(--button-hover);
-    transform: scale(1.1);
-  }
-  
-  .laps {
-    margin-top: 20px;
-    max-height: 200px;
-    overflow-y: auto;
-  }
-  
-  .lap-item {
-    margin: 5px 0;
-    padding: 8px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 10px;
-    animation: slideIn 0.5s ease forwards;
-  }
-  
-  .theme-toggle {
-    margin-top: 20px;
-    padding: 8px 20px;
-    border: none;
-    background: var(--button-bg);
-    border-radius: 20px;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .theme-toggle:hover {
-    background: var(--button-hover);
-  }
-  
-  /* Animations */
-  @keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-  }
-  
-  @keyframes pulse {
-    0% { transform: translate(-50%, -50%) scale(1); }
-    50% { transform: translate(-50%, -50%) scale(1.05); }
-    100% { transform: translate(-50%, -50%) scale(1); }
-  }
-  
-  @keyframes bounce {
-    0% { transform: scale(0.8); }
-    50% { transform: scale(1.2); }
-    100% { transform: scale(1); }
-  }
-  
-  @keyframes slideIn {
-    from { opacity: 0; transform: translateX(-50px); }
-    to { opacity: 1; transform: translateX(0); }
-  }
-  
+}
+
+/* Body styling */
+body {
+    height: 100vh; /* Full viewport height */
+    background: var(--primary-bg); /* Background color based on theme */
+    font-family: 'Poppins', sans-serif; /* Font family */
+    color: var(--text-color); /* Text color based on theme */
+    display: flex; /* Flexbox layout */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    flex-direction: column; /* Stack content vertically */
+    overflow: hidden; /* Hide overflow */
+    animation: fadeIn 2s ease; /* Fade-in animation */
+    transition: all 0.5s ease; /* Smooth transition for theme changes */
+}
+
+/* Main container styling */
+.container {
+    text-align: center; /* Center-align text */
+}
+
+/* Title styling */
+.title {
+    margin-bottom: 20px; /* Space below the title */
+    font-size: 3rem; /* Font size */
+    animation: bounce 1s ease; /* Bounce animation */
+}
+
+/* Stopwatch container */
+.circle-wrapper {
+    position: relative; /* Position relative for child elements */
+    width: 300px; /* Width of the circle */
+    height: 300px; /* Height of the circle */
+    margin: 30px auto; /* Center horizontally and add vertical margin */
+    border-radius: 50%; /* Circular shape */
+    overflow: hidden; /* Hide overflow */
+    background: rgba(255, 255, 255, 0.1); /* Transparent background */
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Shadow effect */
+}
+
+/* Stopwatch display */
+.stopwatch {
+    position: absolute; /* Position absolute for centering */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact centering */
+    font-size: 2rem; /* Font size */
+    width: 220px; /* Width of the stopwatch */
+    height: 220px; /* Height of the stopwatch */
+    line-height: 220px; /* Center text vertically */
+    text-align: center; /* Center text horizontally */
+    border-radius: 50%; /* Circular shape */
+    background: rgba(255, 255, 255, 0.15); /* Transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2); /* Inner shadow */
+    transition: transform 0.5s; /* Smooth scaling transition */
+}
+
+/* Running animation for stopwatch */
+.running {
+    animation: pulse 1.5s infinite; /* Pulsing effect */
+}
+
+/* Waves */
+.waves {
+    position: absolute; /* Position absolute for animation */
+    width: 200%; /* Double the size of the container */
+    height: 200%; /* Double the size of the container */
+    top: -50%; /* Start above the container */
+    left: -50%; /* Start to the left of the container */
+    background: var(--wave-color); /* Wave color based on theme */
+    border-radius: 40%; /* Rounded shape */
+    animation: wave 6s infinite linear; /* Rotating wave animation */
+}
+
+/* Delayed wave animation */
+.waves.delay {
+    animation-delay: -3s; /* Start animation with a delay */
+    opacity: 0.6; /* Slightly transparent */
+}
+
+/* Wave animation keyframes */
+@keyframes wave {
+    0% {
+        transform: rotate(0deg); /* Start at 0 degrees */
+    }
+    100% {
+        transform: rotate(360deg); /* Complete a full rotation */
+    }
+}
+
+/* Buttons styling */
+.buttons button {
+    margin: 5px; /* Space between buttons */
+    padding: 10px 20px; /* Padding inside buttons */
+    font-size: 1.1rem; /* Font size */
+    border: none; /* Remove border */
+    border-radius: 10px; /* Rounded corners */
+    background: var(--button-bg); /* Button background based on theme */
+    color: var(--text-color); /* Button text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: 0.3s; /* Smooth hover effect */
+}
+
+/* Button hover effect */
+.buttons button:hover {
+    background: var(--button-hover); /* Change background on hover */
+    transform: scale(1.1); /* Slightly enlarge button */
+}
+
+/* Laps container styling */
+.laps {
+    margin-top: 20px; /* Space above the laps container */
+    max-height: 200px; /* Limit height */
+    overflow-y: auto; /* Enable vertical scrolling */
+}
+
+/* Individual lap item styling */
+.lap-item {
+    margin: 5px 0; /* Space between lap items */
+    padding: 8px; /* Padding inside lap items */
+    background: rgba(255, 255, 255, 0.2); /* Transparent background */
+    border-radius: 10px; /* Rounded corners */
+    animation: slideIn 0.5s ease forwards; /* Slide-in animation */
+}
+
+/* Theme toggle button styling */
+.theme-toggle {
+    position: absolute; /* Position absolute for placement */
+    top: 20px; /* Distance from the top */
+    right: 20px; /* Distance from the right */
+    padding: 8px 20px; /* Padding inside the button */
+    border: none; /* Remove border */
+    background: var(--button-bg); /* Background based on theme */
+    border-radius: 60px; /* Rounded pill shape */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background 0.3s; /* Smooth hover effect */
+}
+
+/* Theme toggle hover effect */
+.theme-toggle:hover {
+    background: var(--button-hover); /* Change background on hover */
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0; /* Start fully transparent */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1); /* Normal size */
+    }
+    50% {
+        transform: translate(-50%, -50%) scale(1.05); /* Slightly larger */
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(1); /* Back to normal size */
+    }
+}
+
+@keyframes bounce {
+    0% {
+        transform: scale(0.8); /* Smaller size */
+    }
+    50% {
+        transform: scale(1.2); /* Larger size */
+    }
+    100% {
+        transform: scale(1); /* Back to normal size */
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0; /* Start fully transparent */
+        transform: translateX(-50px); /* Start off-screen */
+    }
+    to {
+        opacity: 1; /* End fully visible */
+        transform: translateX(0); /* End in position */
+    }
+}
+
+/* Responsive Design */
+
+/* Styles for screens smaller than 768px */
+@media (max-width: 768px) {
+    .title {
+        font-size: 3rem; /* Adjust title size */
+    }
+    .circle-wrapper {
+        width: 250px; /* Adjust circle size */
+        height: 250px;
+    }
+    .stopwatch {
+        width: 180px; /* Adjust stopwatch size */
+        height: 180px;
+        line-height: 180px;
+        font-size: 1.5rem; /* Adjust font size */
+    }
+    .buttons button {
+        padding: 8px 16px; /* Adjust button padding */
+        font-size: 1rem; /* Adjust button font size */
+    }
+    .laps {
+        max-height: 150px; /* Adjust laps container height */
+    }
+    .theme-toggle {
+        padding: 6px 16px; /* Adjust toggle button padding */
+        font-size: 0.9rem; /* Adjust toggle button font size */
+    }
+}
+
+/* Styles for screens smaller than 480px */
+@media (max-width: 480px) {
+    .title {
+        font-size: 1.8rem; /* Adjust title size */
+    }
+    .circle-wrapper {
+        width: 200px; /* Adjust circle size */
+        height: 200px;
+    }
+    .stopwatch {
+        width: 150px; /* Adjust stopwatch size */
+        height: 150px;
+        line-height: 150px;
+        font-size: 1.2rem; /* Adjust font size */
+    }
+    .buttons button {
+        padding: 6px 12px; /* Adjust button padding */
+        font-size: 0.9rem; /* Adjust button font size */
+    }
+    .laps {
+        max-height: 120px; /* Adjust laps container height */
+    }
+    .theme-toggle {
+        padding: 5px 12px; /* Adjust toggle button padding */
+        font-size: 0.8rem; /* Adjust toggle button font size */
+    }
+}
